@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operación CN-WATCHTOWER/ALPHA-06/2025</title>
+  <style>
+    :root {
+      /* Tema claro por defecto */
+      --bg-color: #f4f7fa;
+      --text-color: #333;
+      --primary-color: #005ca9;
+      --accent-color: #ffd200;
+    }
+    [data-theme="dark"] {
+      /* Variables para modo oscuro */
+      --bg-color: #1e1e1e;
+      --text-color: #ddd;
+      --primary-color: #4ea1ff;
+      --accent-color: #ffcc00;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background .3s, color .3s;
+    }
+    header {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+      position: relative;
+    }
+    header h1 { font-size: 1.8rem; }
+
+    /* Switch de tema */
+    .theme-switch {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .theme-switch input { display: none; }
+    .slider {
+      width: 40px;
+      height: 20px;
+      background: #ccc;
+      border-radius: 20px;
+      position: relative;
+      transition: background .3s;
+    }
+    .slider::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 1px; left: 1px;
+      transition: transform .3s;
+    }
+    input:checked + .slider {
+      background: var(--accent-color);
+    }
+    input:checked + .slider::before {
+      transform: translateX(20px);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Botón de audio */
+    #btn-play {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: opacity .3s;
+    }
+    #btn-play:hover {
+      opacity: 0.85;
+    }
+
+    /* Botón de descarga */
+    .download-btn {
+      display: inline-block;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      background: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: opacity .3s;
+    }
+    .download-btn:hover {
+      opacity: 0.85;
+    }
+
+    section { margin-bottom: 2rem; }
+    section h2 {
+      color: var(--primary-color);
+      margin-bottom: .5rem;
+      border-bottom: 2px solid var(--accent-color);
+      display: inline-block;
+      padding-bottom: .2rem;
+    }
+    ul { list-style: inside square; margin-top: .5rem; }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: .9rem;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="NATO_OTAN_portrait_logo.png" alt="Logo OTAN" height="60" />
+    <h1>Operación CN-WATCHTOWER/ALPHA-06/3309</h1>
+    <label class="theme-switch">
+      <input type="checkbox" id="toggle-theme">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <main>
+    <!-- Audio de la misión -->
+    <button id="btn-play">▶️ Escuchar misión</button>
+    <audio id="bg-audio" src="sonido/otan_audio.mp3" preload="auto"></audio>
+
+    <!-- Descarga PDF -->
+    <section id="download">
+      <h2>Descargar Orden de Misión</h2>
+      <a
+        href="docs/Misión-CN-WATCHTOWER.pdf"
+        download="Misión-CN-WATCHTOWER.pdf"
+        class="download-btn"
+      >
+        📄 Descargar PDF de la Orden
+      </a>
+    </section>
+
+    <section id="overview">
+      <h2>Resumen Ejecutivo</h2>
+      <p>
+        Bajo el amparo del <strong>Cyber Defence Pledge</strong>, la OTAN activa
+        esta operación para contrarrestar vectores de intrusión coordinados
+        contra infraestructuras críticas de estados aliados.
+      </p>
+    </section>
+
+    <section id="objectives">
+      <h2>Objetivos de la Misión</h2>
+      <ul>
+        <li>Identificar patrones de TTPs según CSIRT de Francia, Canadá y Polonia.</li>
+        <li>Infiltrar nodos C2 hostiles garantizando cadena de custodia (STANAG 4774).</li>
+        <li>Compartir inteligencia en tiempo real con CCDCOE en Tallin.</li>
+        <li>Coordinar respuesta conjunta con INTERPOL y aliados.</li>
+      </ul>
+    </section>
+
+    <section id="resources">
+      <h2>Recursos Asignados</h2>
+      <ul>
+        <li><strong>Acceso SIGINT-M/72</strong> – Nodo de inteligencia de señales.</li>
+        <li><strong>Plataforma CRONOS-LYNX</strong> – Análisis táctico en tiempo real.</li>
+        <li><strong>Canales cifrados</strong> – Protocolo TAURUS-QRM/NATO-ECHO.</li>
+      </ul>
+    </section>
+
+    <section id="constraints">
+      <h2>Restricciones Operativas</h2>
+      <ul>
+        <li>Opera conforme a MC 0684 (NATO Policy on Cyber Defence).</li>
+        <li>Prohibida la alteración de activos civiles sin autorización expresa.</li>
+        <li>Comunicación sólo por canales autorizados y cifrados.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Puntos de Contacto</h2>
+      <p>
+        Reportes y anomalías vía nodo seguro:
+        <a href="mailto:cyoc@natocmd.int">cyoc@natocmd.int</a><br />
+        Línea directa (cifrada): +32 65 44 1234
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    NATO Cyber Operations Centre &copy; 2025 | Confidencial – Nivel Negro Tier 1
+  </footer>
+
+  <script>
+    // Tema claro/oscuro
+    const toggle = document.getElementById('toggle-theme');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Control de audio
+    const btn = document.getElementById('btn-play');
+    const audio = document.getElementById('bg-audio');
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = '⏸️ Pausar briefing';
+      } else {
+        audio.pause();
+        btn.textContent = '▶️ Escuchar briefing';
+      }
+    });
+  </script>
+</body>
+</html>
